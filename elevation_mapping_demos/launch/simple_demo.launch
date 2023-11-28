@@ -8,20 +8,20 @@
   </node>
 
   <!-- Publish some points -->
-  <node pkg="point_cloud_io" type="read" name="read_ply" output="screen">
+  <!-- <node pkg="point_cloud_io" type="read" name="read_ply" output="screen">
     <param name="file_path" value="$(find elevation_mapping_demos)/sample_data/maze.ply" />
     <param name="topic" value="/points" />
     <param name="frame" value="map" />
     <param name="rate" value="1.0" />
-  </node>
+  </node> -->
 
   <!-- Setup a transform between the world and the robot -->
-  <node pkg="tf" type="static_transform_publisher" name="world_to_robot" args="2.0 6.0 0 0 0.0 0 /map /base 100"/>
+  <!-- <node pkg="tf" type="static_transform_publisher" name="world_to_robot" args="2.0 6.0 0 0 0.0 0 /map /base 100"/> -->
 
   <!-- Launch visualizations for the resulting elevation map -->
   <include file="$(find elevation_mapping_demos)/launch/visualization.launch" />
 
   <!-- Launch RViz with the demo configuration -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find elevation_mapping_demos)/rviz/elevation_map_visualization.rviz" />
+  <node name="rviz_elevation_mapping" pkg="rviz" type="rviz" args="-d $(find elevation_mapping_demos)/rviz/elevation_map_visualization.rviz" />
 
 </launch>
