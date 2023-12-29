@@ -6,7 +6,7 @@ input_sources:
     queue_size: 1
     publish_on_update: true # Whether to publish the elevation map after a callback from this source.
     sensor_processor:
-      type: perfect
+      type: laser # perfect
 map_frame_id: "map_gravity_aligned"
 robot_base_frame_id: "livox_frame_gravity_aligned"
 robot_pose_with_covariance_topic: "" # Leaving this empty skipps pose covariance updates.
